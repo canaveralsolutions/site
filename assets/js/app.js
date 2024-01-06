@@ -181,8 +181,6 @@ console.log(serialize({
 function submitEmail(){
   window.location = "mailto:contact@canaveralsolutions.ltd" + serialize({
     subject: document.getElementById('subject').value,
-    body: "My name : " + document.getElementById('name').value + "
-    " + "My email : " + document.getElementById('email').value + "
-    " + document.getElementById('comments').value
+    body: "My name : " + document.getElementById('name').value + "\n" + "My email : " + document.getElementById('email').value + "\n" + document.getElementById('comments').value
   });
 }
