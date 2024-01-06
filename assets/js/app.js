@@ -57,18 +57,18 @@ try {
         offset: 80
     });
 } catch (error) {
-    
+
 }
 
 
-// Smooth scroll 
+// Smooth scroll
 try {
     var scroll = new SmoothScroll('#navbar-navlist a', {
         speed: 800,
         offset: 80
     });
 } catch (error) {
-    
+
 }
 
 // Menu Collapse
@@ -127,7 +127,7 @@ try {
     function changeTheme(e){
         e.preventDefault()
         const htmlTag = document.getElementsByTagName("html")[0]
-        
+
         if (htmlTag.className.includes("dark")) {
             htmlTag.className = 'light'
         } else {
@@ -137,12 +137,12 @@ try {
 
     const switcher = document.getElementById("theme-mode")
     switcher?.addEventListener("click" ,changeTheme )
-    
+
     const chk = document.getElementById('chk');
 
     chk.addEventListener('change',changeTheme);
 } catch (err) {
-    
+
 }
 
 /*********************/
@@ -163,3 +163,26 @@ feather.replace();
         }
     }
 })();
+
+serialize = function(obj) {
+  var str = [];
+  for (var p in obj)
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    }
+  return str.join("&");
+}
+
+console.log(serialize({
+  foo: "hi there",
+  bar: "100%"
+}));
+
+function submitEmail(){
+  window.location = "mailto:contact@canaveralsolutions.ltd" + serialize({
+    subject: document.getElementById('subject').value,
+    body: "My name : " + document.getElementById('name').value + "
+    " + "My email : " + document.getElementById('email').value + "
+    " + document.getElementById('comments').value
+  });
+}
